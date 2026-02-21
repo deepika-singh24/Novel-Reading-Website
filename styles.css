@@ -1,0 +1,774 @@
+/* ========================================
+   NovelHub - Professional Novel Platform CSS
+   ======================================== */
+
+:root {
+    --primary: #6C63FF;
+    --secondary: #FF6584;
+    --background: #F8F9FC;
+    --text: #1A1A1A;
+    --dark-bg: #1E1E1E;
+    --card-shadow: 0 4px 20px rgba(108, 99, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+
+.navbar {
+    background: white;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary) !important;
+}
+
+.nav-link {
+    color: var(--text) !important;
+    font-weight: 500;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+.nav-link:hover {
+    color: var(--primary) !important;
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 100px 0;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    top: -250px;
+    right: -250px;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.8s ease;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.btn-primary {
+    background: var(--primary);
+    border: none;
+    padding: 12px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(108, 99, 255, 0.4);
+    background: var(--primary);
+}
+
+.btn-outline-light {
+    border: 2px solid white;
+    padding: 12px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background: white;
+    color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ========================================
+   NOVEL CARDS
+   ======================================== */
+
+.novel-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+}
+
+.novel-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(108, 99, 255, 0.2);
+}
+
+.novel-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.novel-card-body {
+    padding: 1.5rem;
+}
+
+.novel-card h5 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.novel-card .author {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.rating {
+    color: #ffa500;
+    margin-bottom: 0.5rem;
+}
+
+.badge-genre {
+    background: var(--primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+/* ========================================
+   GENRE CARDS
+   ======================================== */
+
+.genre-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.genre-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(108, 99, 255, 0.2);
+}
+
+.genre-card i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.genre-card h4 {
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* ========================================
+   AUTHOR CARDS
+   ======================================== */
+
+.author-card {
+    text-align: center;
+    padding: 1rem;
+}
+
+.author-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--primary);
+    object-fit: cover;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.author-card:hover img {
+    transform: scale(1.1);
+}
+
+.author-card h5 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.author-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   SECTION STYLING
+   ======================================== */
+
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: var(--primary);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.footer {
+    background: #2C2C2C;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer h5 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.footer a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--primary);
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: var(--secondary);
+    transform: translateY(-5px);
+}
+
+/* ========================================
+   FILTERS SIDEBAR
+   ======================================== */
+
+.filters-sidebar {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    position: sticky;
+    top: 100px;
+}
+
+.filter-group {
+    margin-bottom: 2rem;
+}
+
+.filter-group h5 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+/* ========================================
+   NOVEL DETAIL PAGE
+   ======================================== */
+
+.detail-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 3rem 0;
+    color: white;
+}
+
+.detail-cover {
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    max-width: 100%;
+}
+
+.detail-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.detail-info .meta {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.action-buttons {
+    margin-top: 2rem;
+}
+
+.action-buttons .btn {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* ========================================
+   CHAPTER LIST
+   ======================================== */
+
+.chapter-list {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+}
+
+.chapter-item {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.chapter-item:hover {
+    background: var(--background);
+    padding-left: 1.5rem;
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+/* ========================================
+   READER PAGE
+   ======================================== */
+
+.reader-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    min-height: 100vh;
+}
+
+.reader-toolbar {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reader-content {
+    font-family: 'Merriweather', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    padding: 3rem 0;
+    text-align: justify;
+}
+
+.reader-content p {
+    margin-bottom: 1.5rem;
+}
+
+.reader-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+.font-controls button {
+    background: var(--background);
+    border: none;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.font-controls button:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* ========================================
+   AUTH PAGES
+   ======================================== */
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.auth-card {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    max-width: 450px;
+    width: 100%;
+}
+
+.auth-card h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary);
+}
+
+.form-control {
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #eee;
+    margin-bottom: 1rem;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
+}
+
+/* ========================================
+   ADMIN PANEL
+   ======================================== */
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-sidebar {
+    width: 250px;
+    background: #2C2C2C;
+    color: white;
+    padding: 2rem 0;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.admin-sidebar h4 {
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary);
+}
+
+.admin-menu-item {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.admin-menu-item:hover,
+.admin-menu-item.active {
+    background: rgba(108, 99, 255, 0.1);
+    border-left-color: var(--primary);
+}
+
+.admin-content {
+    margin-left: 250px;
+    padding: 2rem;
+    flex: 1;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+}
+
+.stat-card h3 {
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   TOAST NOTIFICATION
+   ======================================== */
+
+.toast-notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 9999;
+    display: none;
+    animation: slideInRight 0.5s ease;
+}
+
+.toast-notification.show {
+    display: block;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* ========================================
+   DARK MODE
+   ======================================== */
+
+body.dark-mode {
+    background: var(--dark-bg);
+    color: white;
+}
+
+body.dark-mode .navbar,
+body.dark-mode .novel-card,
+body.dark-mode .genre-card,
+body.dark-mode .filters-sidebar,
+body.dark-mode .chapter-list,
+body.dark-mode .reader-container,
+body.dark-mode .reader-toolbar {
+    background: #2C2C2C;
+    color: white;
+}
+
+body.dark-mode .novel-card h5,
+body.dark-mode .genre-card h4 {
+    color: white;
+}
+
+/* ========================================
+   EMPTY STATE
+   ======================================== */
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.empty-state i {
+    font-size: 5rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* ========================================
+   ICON BUTTONS
+   ======================================== */
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+}
+
+.icon-btn:hover {
+    color: var(--primary);
+    transform: scale(1.1);
+}
+
+.icon-btn.active {
+    color: var(--secondary);
+}
+
+/* ========================================
+   PAGE MANAGEMENT
+   ======================================== */
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.search-bar {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.pagination {
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .admin-sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+    
+    .admin-content {
+        margin-left: 0;
+    }
+    
+    .novel-card img {
+        height: 250px;
+    }
+    
+    .detail-info h1 {
+        font-size: 1.8rem;
+    }
+    
+    .reader-content {
+        font-size: 1rem;
+    }
+}
